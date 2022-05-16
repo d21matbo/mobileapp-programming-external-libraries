@@ -1,14 +1,14 @@
 
 # Rapport
 
--[x] Find an interesting external library
+- [x] Find an interesting external library
 
 An issue that has risen is to represent a ImageView within a circle,
 the issue is located within the 'Project' and therefore this 'dugga' will be used as practice for a solution.
 
 With some searching of the web, a Github repository `https://github.com/hdodenhof/CircleImageView` showed a promising solution.
 
--[x] Add the external library as a dependency in `app/build.gradle`
+- [x] Add the external library as a dependency in `app/build.gradle`
 
 ```gradle
     implementation 'de.hdodenhof:circleimageview:3.1.0'
@@ -17,7 +17,7 @@ With some searching of the web, a Github repository `https://github.com/hdodenho
 This code is added under `dependencies` in `build.gradle`,
 which provides access to the code in the Github repository.
 
--[x] Modify your XML layout and Java code to use the external library
+- [x] Modify your XML layout and Java code to use the external library
 
 ```xml
     <de.hdodenhof.circleimageview.CircleImageView
