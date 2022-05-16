@@ -1,42 +1,43 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+-[x] Find an interesting external library
 
-_Du kan ta bort all text som finns sedan tidigare_.
+An issue that has risen is to represent a ImageView within a circle,
+the issue is located within the 'Project' and therefore this 'dugga' will be used as practice for a solution.
 
-## Följande grundsyn gäller dugga-svar:
+With some searching of the web, a Github repository `https://github.com/hdodenhof/CircleImageView` showed a promising solution.
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
+-[x] Add the external library as a dependency in `app/build.gradle`
 
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
-```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+```gradle
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
+This code is added under `dependencies` in `build.gradle`,
+which provides access to the code in the Github repository.
 
-![](android.png)
+-[x] Modify your XML layout and Java code to use the external library
 
-Läs gärna:
+```xml
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_view"
+        android:src="@drawable/img_food_1"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
+```
+And
+```java
+CircleImageView circleImageView = findViewById(R.id.profile_view);
+circleImageView.setBorderWidth(5);
+```
 
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+This whole solution could be done within the `activity_main.xml` file,
+but the attribute for borders are handled in `MainActivity.java` at runtime,
+to show understanding of how to use the library in both XML and Java.
+
+![](Screenshot.png)
