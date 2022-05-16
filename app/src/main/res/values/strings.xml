@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ExternalLibraries</string>
+    <string name="this_is_a_circleimageview">This is a CircleImageView</string>
 </resources>
