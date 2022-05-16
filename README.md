@@ -19,6 +19,7 @@ which provides access to the code in the Github repository.
 
 - [x] Modify your XML layout and Java code to use the external library
 
+The following code is used to create and manipulate the CircleImageView
 ```xml
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_view"
@@ -36,8 +37,8 @@ CircleImageView circleImageView = findViewById(R.id.profile_view);
 circleImageView.setBorderWidth(5);
 ```
 
-This whole solution could be done within the `activity_main.xml` file,
-but the attribute for borders are handled in `MainActivity.java` at runtime,
-to show understanding of how to use the library in both XML and Java.
+This whole solution could be done within only the `activity_main.xml` file,
+but the attribute used to create a border is manipulated in `MainActivity.java` instead.
+Although unnecessary, this is done to show understanding of how to use the library in both XML and Java.
 
 ![](Screenshot.png)
